@@ -1,0 +1,2 @@
+Broj obicnih karata: 19
+Broj VIP karata: 5

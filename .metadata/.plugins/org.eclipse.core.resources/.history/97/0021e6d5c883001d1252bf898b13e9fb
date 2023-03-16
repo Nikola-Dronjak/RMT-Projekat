@@ -1,0 +1,52 @@
+package main;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+public class Karte {
+
+	ClientHandler ch;
+
+	public Karte(ClientHandler client) {
+		ch = client;
+	}
+
+	int brojObicnihKarata = 20;
+	int brojVIPKarata = 5;
+
+	public int vratiBrojObicnihKarata() {
+		int brojObicnihKarata = 0;
+		String pom = "";
+		try (FileReader fr = new FileReader("karte.txt"); BufferedReader br = new BufferedReader(fr)) {
+			String prviRed = br.readLine();
+			pom = prviRed;
+			brojObicnihKarata = Integer.parseInt(pom.substring(pom.indexOf("Broj obicnih karata: ") + 20).trim());
+		} catch (Exception e) {
+			ch.clientOutput.println("Greška prilikom rada sa fajlovima: " + e.getMessage());
+		}
+		return brojObicnihKarata;
+	}
+
+	public void napraviFajl() {
+		File f = new File("C:\\Users\\Nikola\\Desktop\\RMT domaci\\Server\\karte.txt");
+		if (f.exists() && !f.isDirectory()) {
+			ch.clientOutput.println("Broj raspoloživih obiènih karata: " + vratiBrojObicnihKarata());
+			ch.clientOutput.println("Broj raspoloživih VIP karata: " + brojVIPKarata);
+		} else {
+			try (FileWriter fw = new FileWriter("karte.txt", true);
+					BufferedWriter bw = new BufferedWriter(fw);
+					PrintWriter pw = new PrintWriter(bw)) {
+				pw.println("Broj obicnih karata: " + vratiBrojObicnihKarata());
+				pw.println("Broj VIP karata: " + brojVIPKarata);
+				ch.clientOutput.println("Broj raspoloživih obiènih karata: " + vratiBrojObicnihKarata());
+				ch.clientOutput.println("Broj raspoloživih VIP karata: " + brojVIPKarata);
+			} catch (Exception e) {
+				ch.clientOutput.println("Greška prilikom rada sa fajlovima: " + e.getMessage());
+			}
+		}
+	}
+}

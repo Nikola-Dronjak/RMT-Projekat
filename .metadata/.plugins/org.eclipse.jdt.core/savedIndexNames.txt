@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\Nikola\Desktop\RMT domaci\.metadata\.plugins\org.eclipse.jdt.core
+2082615262.index
+2501520862.index
+1865797976.index
+2863229106.index

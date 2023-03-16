@@ -1,0 +1,6 @@
+Ime: N
+Prezime: D
+JMBG: 2222222222222
+email: @
+Broj karata: 1
+------------------------------

@@ -1,0 +1,21 @@
+package main;
+
+public class Karte {
+
+	ClientHandler ch;
+
+	public Karte(ClientHandler client) {
+		ch = client;
+	}
+
+	int brojObicnihKarata;
+	int brojVIPKarata;
+
+	public void napraviFajl() {
+		try {
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

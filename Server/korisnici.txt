@@ -1,0 +1,9 @@
+Korisnicko ime: nikola123
+Šifra: lozinka1
+Ime: Nikola
+Prezime: Dronjak
+JMBG: 1111111111111
+Email: @
+Broj obicnih karata: 1
+Broj VIP karata: 0
+------------------------------
